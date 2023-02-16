@@ -10,7 +10,7 @@
            [(ngModel)]="searchString">
   </section>
 
-  <section *ngIf="searchString!=undefined"
+  <section *ngIf="searchString"
            class="mt-20 layout-row align-items-center justify-content-center">
     <div class="card outlined">
         <div *ngIf="found"
