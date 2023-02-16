@@ -6,12 +6,19 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./weatherDetails.component.scss']
 })
 
-export class WeatherDetails implements OnInit {
+export class WeatherDetails {
   @Input() weatherData: data[];
 
-  ngOnInit() {
+  searchString: string | undefined;
 
+  get found() {
+    return !!this.city;
   }
+
+  get city(): data | undefined {
+    return this.weatherData.find(city => city.name == this.searchString);
+  }
+
 }
 
 interface data {
