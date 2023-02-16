@@ -16,7 +16,7 @@ export class WeatherDetails {
   }
 
   get city(): data | undefined {
-    return this.weatherData.find(city => city.name == this.searchString);
+    return this.weatherData.find(city => city.name.toLowerCase() == this.searchString.toLowerCase());
   }
 
 }
